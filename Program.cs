@@ -1,70 +1,48 @@
 ﻿using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Journal journal = new Journal();
-        PromptGenerator promptGenerator = new PromptGenerator();
+        List<Scripture> scriptures = new List<Scripture>();
 
-        int choice = 0;
+        scriptures.Add(new Scripture(
+            new Reference("John", 3, 16),
+            "For God so loved the world that he gave his only begotten Son"
+        ));
 
-        while (choice != 5)
+        scriptures.Add(new Scripture(
+            new Reference("Proverbs", 3, 5, 6),
+            "Trust in the Lord with all thine heart and lean not unto thine own understanding"
+        ));
+
+        Random random = new Random();
+
+        Scripture selectedScripture = scriptures[random.Next(scriptures.Count)];
+
+        while (!selectedScripture.IsCompletelyHidden())
         {
-            Console.WriteLine("Menu Options:");
-            Console.WriteLine("1. Write");
-            Console.WriteLine("2. Display");
-            Console.WriteLine("3. Load");
-            Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
-            Console.Write("Select a choice from the menu: ");
+            Console.Clear();
 
-            choice = int.Parse(Console.ReadLine());
+            Console.WriteLine(selectedScripture.GetDisplayText());
 
-            if (choice == 1)
+            Console.WriteLine();
+            Console.Write("Press Enter to continue or type quit: ");
+
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "quit")
             {
-                string prompt = promptGenerator.GetRandomPrompt();
+                break;
+            }
 
-                Console.WriteLine(prompt);
-                Console.Write("> ");
-                string response = Console.ReadLine();
-                Console.Write("What was your mood today? ");
-                string mood = Console.ReadLine();
-
-                Entry entry = new Entry();
-                entry._date = DateTime.Now.ToShortDateString();
-                entry._promptText = prompt;
-                entry._entryText = response;
-                entry._mood = mood;
-
-                journal.AddEntry(entry);
-            }
-            else if (choice == 2)
-            {
-                journal.DisplayAll();
-            }
-            else if (choice == 3)
-            {
-                Console.Write("What is the filename? ");
-                string file = Console.ReadLine();
-
-                journal.LoadFromFile(file);
-            }
-            else if (choice == 4)
-            {
-                Console.Write("What is the filename? ");
-                string file = Console.ReadLine();
-
-                journal.SaveToFile(file);
-            }
-            else if (choice == 5)
-            {
-                Console.WriteLine("Goodbye!");
-            }
-            else
-            {
-                Console.WriteLine("Invalid option.");
-            }
+            selectedScripture.HideRandomWords(3);
         }
+
+        Console.Clear();
+        Console.WriteLine(selectedScripture.GetDisplayText());
+
+        Console.WriteLine("\nProgram ended.");
     }
 }
