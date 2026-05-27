@@ -13,3 +13,11 @@ C:\Users\User\OneDrive - BYU-Pathway Worldwide\csharp-programming-exercises\jour
 C:\Users\User\OneDrive - BYU-Pathway Worldwide\csharp-programming-exercises\journalprogram\obj\Debug\net10.0\journalprogram.pdb
 C:\Users\User\OneDrive - BYU-Pathway Worldwide\csharp-programming-exercises\journalprogram\obj\Debug\net10.0\journalprogram.genruntimeconfig.cache
 C:\Users\User\OneDrive - BYU-Pathway Worldwide\csharp-programming-exercises\journalprogram\obj\Debug\net10.0\ref\journalprogram.dll
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\journalprogram.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\journalprogram.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\journalprogram.AssemblyInfo.cs
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\journalprogram.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\journalprogram.sourcelink.json
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\journalprogram.dll
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\refint\journalprogram.dll
+C:\Users\User\OneDrive - BYU-Pathway Worldwide\journalprogram\obj\Debug\net10.0\journalprogram.pdb
