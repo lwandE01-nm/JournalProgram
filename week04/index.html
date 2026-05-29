@@ -2,29 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Week 04 - Foundation Projects</title>
+    <title>Week 04 Foundation Projects</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 40px;
+            color: #333;
         }
 
         .container {
             background: white;
             padding: 30px;
             border-radius: 10px;
-            max-width: 800px;
+            max-width: 900px;
+            margin: auto;
         }
 
         h1 {
             color: #2c3e50;
         }
 
+        h2 {
+            margin-top: 30px;
+            color: #34495e;
+        }
+
         a {
             display: block;
-            margin: 15px 0;
+            margin: 12px 0;
             font-size: 18px;
             color: #0066cc;
             text-decoration: none;
@@ -34,10 +41,26 @@
             text-decoration: underline;
         }
 
+        img {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
         .note {
-            margin-top: 20px;
             font-size: 14px;
             color: gray;
+            margin-top: 10px;
+        }
+
+        hr {
+            margin: 30px 0;
         }
     </style>
 </head>
@@ -46,18 +69,44 @@
 
 <div class="container">
 
-<h1>Week 04 Foundation Projects</h1>
+    <h1>Week 04 Foundation Projects</h1>
 
-<p>This week demonstrates <strong>Abstraction</strong> and <strong>Encapsulation</strong> in C#.</p>
+    <p>
+        This week demonstrates <strong>Abstraction</strong> and <strong>Encapsulation</strong> using C# classes and object relationships.
+    </p>
 
-<h2>Projects</h2>
+    <h2>Projects</h2>
 
-<a href="./YouTubeVideos/">📺 YouTube Videos (Abstraction)</a>
-<a href="./OnlineOrdering/">🛒 Online Ordering System (Encapsulation)</a>
+    <a href="./YouTubeVideos/">📺 YouTube Videos (Abstraction)</a>
+    <a href="./OnlineOrdering/">🛒 Online Ordering System (Encapsulation)</a>
 
-<div class="note">
-Make sure each project contains a screenshot of program output.
-</div>
+    <hr>
+
+    <h2>Program Evidence</h2>
+
+    <h3>YouTube Videos Output</h3>
+    <img src="./YouTubeVideos/program-output.png" alt="YouTube Output Screenshot">
+
+    <h3>Online Ordering Output</h3>
+    <img src="./OnlineOrdering/program-output.png" alt="Online Ordering Screenshot">
+
+    <hr>
+
+    <h2>Concepts Demonstrated</h2>
+
+    <ul>
+        <li>Abstraction using Video and Comment classes</li>
+        <li>Encapsulation using Product, Order, Customer, and Address classes</li>
+        <li>Use of Lists to manage multiple objects</li>
+        <li>Methods inside classes to organize logic properly</li>
+        <li>Object relationships between classes</li>
+    </ul>
+
+    <hr>
+
+    <p class="note">
+        Ensure your screenshots are inside each project folder and named correctly.
+    </p>
 
 </div>
 
