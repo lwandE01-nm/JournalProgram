@@ -5,43 +5,62 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create videos
-        Video video1 = new Video("C# Classes Tutorial", "Tech Guru", 600);
-        Video video2 = new Video("Learn Abstraction", "Code Master", 750);
-        Video video3 = new Video("OOP Basics Explained", "Dev Simplified", 500);
+        Video video1 = new Video();
+        video1._title = "Learning C# Basics";
+        video1._author = "John Smith";
+        video1._length = 300;
 
-        // Add comments to video 1
-        video1.AddComment(new Comment("Alice", "Very helpful, thanks!"));
-        video1.AddComment(new Comment("John", "I finally understand classes."));
-        video1.AddComment(new Comment("Mary", "Great explanation."));
+        video1._comments.Add(new Comment("Alice", "Great tutorial!"));
+        video1._comments.Add(new Comment("Mike", "Very helpful."));
+        video1._comments.Add(new Comment("Sarah", "Thanks for explaining clearly."));
 
-        // Add comments to video 2
-        video2.AddComment(new Comment("Sam", "Abstraction is clearer now."));
-        video2.AddComment(new Comment("Lebo", "Nice examples!"));
-        video2.AddComment(new Comment("Tom", "This helped a lot."));
+        Video video2 = new Video();
+        video2._title = "Cooking Pasta";
+        video2._author = "Chef Maria";
+        video2._length = 450;
 
-        // Add comments to video 3
-        video3.AddComment(new Comment("Zoe", "Perfect introduction."));
-        video3.AddComment(new Comment("Mike", "Simple and clear."));
-        video3.AddComment(new Comment("Nelly", "I understand OOP now."));
+        video2._comments.Add(new Comment("Tom", "Looks delicious!"));
+        video2._comments.Add(new Comment("Jane", "I will try this recipe."));
+        video2._comments.Add(new Comment("Chris", "Amazing cooking tips."));
 
-        // Put videos in a list
-        List<Video> videos = new List<Video> { video1, video2, video3 };
+        Video video3 = new Video();
+        video3._title = "Morning Workout";
+        video3._author = "Fitness Pro";
+        video3._length = 600;
 
-        // Display results
+        video3._comments.Add(new Comment("Lily", "Awesome workout!"));
+        video3._comments.Add(new Comment("Ben", "I feel energized."));
+        video3._comments.Add(new Comment("Emma", "Loved this session."));
+
+        Video video4 = new Video();
+        video4._title = "Travel Vlog in Paris";
+        video4._author = "Wander World";
+        video4._length = 720;
+
+        video4._comments.Add(new Comment("Sophia", "Paris looks beautiful!"));
+        video4._comments.Add(new Comment("Daniel", "I want to visit someday."));
+        video4._comments.Add(new Comment("Grace", "Amazing video quality."));
+
+        List<Video> videos = new List<Video>();
+
+        videos.Add(video1);
+        videos.Add(video2);
+        videos.Add(video3);
+        videos.Add(video4);
+
         foreach (Video video in videos)
         {
-            Console.WriteLine("====================================");
-            Console.WriteLine($"Title: {video.Title}");
-            Console.WriteLine($"Author: {video.Author}");
-            Console.WriteLine($"Length: {video.LengthSeconds} seconds");
-            Console.WriteLine($"Comments: {video.GetCommentCount()}");
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine($"Title: {video._title}");
+            Console.WriteLine($"Author: {video._author}");
+            Console.WriteLine($"Length: {video._length} seconds");
+            Console.WriteLine($"Number of Comments: {video.GetNumberOfComments()}");
 
-            Console.WriteLine("---- Comments ----");
+            Console.WriteLine("Comments:");
 
-            foreach (Comment comment in video.GetComments())
+            foreach (Comment comment in video._comments)
             {
-                Console.WriteLine($"{comment.Name}: {comment.Text}");
+                Console.WriteLine($"{comment._name}: {comment._text}");
             }
 
             Console.WriteLine();
