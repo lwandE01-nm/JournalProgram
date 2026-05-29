@@ -1,32 +1,69 @@
+using System;
 using System.Collections.Generic;
 
-public class Video
+class Program
 {
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public int LengthSeconds { get; set; }
-
-    private List<Comment> _comments = new List<Comment>();
-
-    public Video(string title, string author, int lengthSeconds)
+    static void Main(string[] args)
     {
-        Title = title;
-        Author = author;
-        LengthSeconds = lengthSeconds;
-    }
+        Video video1 = new Video();
+        video1._title = "Learning C# Basics";
+        video1._author = "John Smith";
+        video1._length = 300;
 
-    public void AddComment(Comment comment)
-    {
-        _comments.Add(comment);
-    }
+        video1._comments.Add(new Comment("Alice", "Great tutorial!"));
+        video1._comments.Add(new Comment("Mike", "Very helpful."));
+        video1._comments.Add(new Comment("Sarah", "Thanks for explaining clearly."));
 
-    public int GetCommentCount()
-    {
-        return _comments.Count;
-    }
+        Video video2 = new Video();
+        video2._title = "Cooking Pasta";
+        video2._author = "Chef Maria";
+        video2._length = 450;
 
-    public List<Comment> GetComments()
-    {
-        return _comments;
+        video2._comments.Add(new Comment("Tom", "Looks delicious!"));
+        video2._comments.Add(new Comment("Jane", "I will try this recipe."));
+        video2._comments.Add(new Comment("Chris", "Amazing cooking tips."));
+
+        Video video3 = new Video();
+        video3._title = "Morning Workout";
+        video3._author = "Fitness Pro";
+        video3._length = 600;
+
+        video3._comments.Add(new Comment("Lily", "Awesome workout!"));
+        video3._comments.Add(new Comment("Ben", "I feel energized."));
+        video3._comments.Add(new Comment("Emma", "Loved this session."));
+
+        Video video4 = new Video();
+        video4._title = "Travel Vlog in Paris";
+        video4._author = "Wander World";
+        video4._length = 720;
+
+        video4._comments.Add(new Comment("Sophia", "Paris looks beautiful!"));
+        video4._comments.Add(new Comment("Daniel", "I want to visit someday."));
+        video4._comments.Add(new Comment("Grace", "Amazing video quality."));
+
+        List<Video> videos = new List<Video>();
+
+        videos.Add(video1);
+        videos.Add(video2);
+        videos.Add(video3);
+        videos.Add(video4);
+
+        foreach (Video video in videos)
+        {
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine($"Title: {video._title}");
+            Console.WriteLine($"Author: {video._author}");
+            Console.WriteLine($"Length: {video._length} seconds");
+            Console.WriteLine($"Number of Comments: {video.GetNumberOfComments()}");
+
+            Console.WriteLine("Comments:");
+
+            foreach (Comment comment in video._comments)
+            {
+                Console.WriteLine($"{comment._name}: {comment._text}");
+            }
+
+            Console.WriteLine();
+        }
     }
 }
