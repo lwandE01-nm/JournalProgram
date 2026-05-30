@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Week 04 Foundation Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 04 Foundation Program Design</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 40px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
             color: #333;
         }
 
@@ -16,94 +20,189 @@
             background: white;
             padding: 30px;
             border-radius: 10px;
-            max-width: 900px;
-            margin: auto;
         }
 
-        h1 {
+        h1, h2, h3 {
             color: #2c3e50;
         }
 
-        h2 {
-            margin-top: 30px;
-            color: #34495e;
+        .diagram {
+            background-color: #eef4ff;
+            padding: 15px;
+            border-left: 5px solid #0066cc;
+            margin: 15px 0;
         }
 
-        a {
-            display: block;
-            margin: 12px 0;
-            font-size: 18px;
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        img {
+        table {
             width: 100%;
-            max-width: 800px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border-collapse: collapse;
+            margin-bottom: 25px;
         }
 
-        ul {
-            line-height: 1.8;
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
         }
 
-        .note {
-            font-size: 14px;
-            color: gray;
-            margin-top: 10px;
+        th {
+            background-color: #f0f0f0;
         }
 
         hr {
-            margin: 30px 0;
+            margin: 40px 0;
         }
     </style>
 </head>
-
 <body>
 
 <div class="container">
 
-    <h1>Week 04 Foundation Projects</h1>
-
+    <h1>Foundation Program Design Document</h1>
     <p>
-        This week demonstrates <strong>Abstraction</strong> and <strong>Encapsulation</strong> using C# classes and object relationships.
+        This document contains the design for the Week 04 Foundation Programs:
+        <strong>Abstraction with YouTube Videos</strong> and
+        <strong>Encapsulation with Online Ordering</strong>.
     </p>
 
-    <h2>Projects</h2>
-
-    <a href="./YouTubeVideos/">📺 YouTube Videos (Abstraction)</a>
-    <a href="./OnlineOrdering/">🛒 Online Ordering System (Encapsulation)</a>
-
     <hr>
 
-    <h2>Program Evidence</h2>
+    <h2>Program 1: Abstraction with YouTube Videos</h2>
 
-    <h3>YouTube Videos Output</h3>
-    <img src="./YouTubeVideos/screenshot.jpg" alt="YouTube Output Screenshot">
+    <h3>What the Program Does</h3>
+    <p>
+        The program models a YouTube-style system that stores videos and comments.
+        Users can view video information and comments associated with each video.
+    </p>
 
-    <hr>
+    <h3>Classes and Responsibilities</h3>
 
-    <h2>Concepts Demonstrated</h2>
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Responsibilities</th>
+        </tr>
+        <tr>
+            <td>Video</td>
+            <td>Store video information and comments.</td>
+        </tr>
+        <tr>
+            <td>Comment</td>
+            <td>Store commenter name and comment text.</td>
+        </tr>
+        <tr>
+            <td>VideoLibrary</td>
+            <td>Store and display multiple videos.</td>
+        </tr>
+    </table>
 
+    <h3>Attributes and Methods</h3>
+
+    <h4>Video</h4>
     <ul>
-        <li>Abstraction using Video and Comment classes</li>
-        <li>Encapsulation using Product, Order, Customer, and Address classes</li>
-        <li>Use of Lists to manage multiple objects</li>
-        <li>Methods inside classes to organize logic properly</li>
-        <li>Object relationships between classes</li>
+        <li><strong>Attributes:</strong> title, author, length, comments</li>
+        <li><strong>Methods:</strong> addComment(), getNumberOfComments(), displayVideoInfo()</li>
     </ul>
 
+    <h4>Comment</h4>
+    <ul>
+        <li><strong>Attributes:</strong> userName, text</li>
+        <li><strong>Methods:</strong> displayComment()</li>
+    </ul>
+
+    <h4>VideoLibrary</h4>
+    <ul>
+        <li><strong>Attributes:</strong> videos</li>
+        <li><strong>Methods:</strong> addVideo(), displayAllVideos()</li>
+    </ul>
+
+    <h3>Class Diagram</h3>
+
+    <div class="diagram">
+        VideoLibrary → Video → Comment
+    </div>
+
+    <h3>Program Flow</h3>
+
+    <div class="diagram">
+        Create Videos → Add Comments → Store in Video Library →
+        Display Videos and Comments
+    </div>
+
     <hr>
 
-    <p class="note">
-        Ensure your screenshot is inside each project folder and named correctly. 
+    <h2>Program 2: Encapsulation with Online Ordering</h2>
+
+    <h3>What the Program Does</h3>
+
+    <p>
+        The program simulates an online ordering system that manages customers,
+        addresses, products, and orders.
     </p>
+
+    <h3>Classes and Responsibilities</h3>
+
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Responsibilities</th>
+        </tr>
+        <tr>
+            <td>Product</td>
+            <td>Store product information and calculate cost.</td>
+        </tr>
+        <tr>
+            <td>Customer</td>
+            <td>Store customer information.</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>Store customer address information.</td>
+        </tr>
+        <tr>
+            <td>Order</td>
+            <td>Manage products, shipping, labels, and totals.</td>
+        </tr>
+    </table>
+
+    <h3>Attributes and Methods</h3>
+
+    <h4>Product</h4>
+    <ul>
+        <li><strong>Attributes:</strong> name, productId, price, quantity</li>
+        <li><strong>Methods:</strong> calculateTotalPrice()</li>
+    </ul>
+
+    <h4>Customer</h4>
+    <ul>
+        <li><strong>Attributes:</strong> name</li>
+        <li><strong>Methods:</strong> displayCustomerInfo()</li>
+    </ul>
+
+    <h4>Address</h4>
+    <ul>
+        <li><strong>Attributes:</strong> street, city, province, country</li>
+        <li><strong>Methods:</strong> displayAddress()</li>
+    </ul>
+
+    <h4>Order</h4>
+    <ul>
+        <li><strong>Attributes:</strong> products, customer, address</li>
+        <li><strong>Methods:</strong> addProduct(), calculateTotal(), getPackingLabel(), getShippingLabel()</li>
+    </ul>
+
+    <h3>Class Diagram</h3>
+
+    <div class="diagram">
+        Customer + Address → Order → Products
+    </div>
+
+    <h3>Program Flow</h3>
+
+    <div class="diagram">
+        Create Customer → Create Address → Add Products →
+        Create Order → Calculate Total → Generate Labels
+    </div>
 
 </div>
 
