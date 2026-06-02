@@ -6,7 +6,7 @@ This project is a mindfulness application written in C#.
 - Breathing Activity
 - Reflection Activity
 - Listing Activity
-- Gratitude Activity (exceeds requirements)
+- Activity (exceeds requirements)
 
 ## Author
 Nothando Alwande Mabaso
