@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 
 public class Activity
 {
@@ -16,7 +15,7 @@ public class Activity
     public void DisplayStartingMessage()
     {
         Console.Clear();
-        Console.WriteLine($"Welcome to the {_name} Activity\n");
+        Console.WriteLine($"Welcome to the {_name}.\n");
         Console.WriteLine(_description);
         Console.Write("\nHow long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
@@ -30,16 +29,19 @@ public class Activity
         Console.WriteLine("\nWell done!");
         ShowSpinner(3);
 
-        
-        Console.WriteLine($"\nYou have completed {_duration} seconds of the {_name} Activity.");
+        Console.WriteLine($"\nYou have completed {_duration} seconds of the {_name}.");
         ShowSpinner(3);
     }
 
-    protected void ShowSpinner(int seconds)
+    public void ShowSpinner(int seconds)
     {
-        string[] spinner = { "|", "/", "-", "\\" };
+        List<string> spinner = new List<string>
+        {
+            "|", "/", "-", "\\"
+        };
 
         DateTime endTime = DateTime.Now.AddSeconds(seconds);
+
         int i = 0;
 
         while (DateTime.Now < endTime)
@@ -48,11 +50,15 @@ public class Activity
             Thread.Sleep(250);
             Console.Write("\b \b");
 
-            i = (i + 1) % spinner.Length;
+            i++;
+            if (i >= spinner.Count)
+            {
+                i = 0;
+            }
         }
     }
 
-    protected void ShowCountdown(int seconds)
+    public void ShowCountdown(int seconds)
     {
         for (int i = seconds; i > 0; i--)
         {
