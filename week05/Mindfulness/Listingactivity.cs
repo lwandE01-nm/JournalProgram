@@ -1,22 +1,16 @@
-using System;
-using System.Collections.Generic;
-
 public class ListingActivity : Activity
 {
     private List<string> _prompts = new List<string>()
     {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
-        "Who are people that you have helped this week?",
-        "When have you felt the Holy Ghost this month?",
+        "Who have you helped this week?",
         "Who are some of your personal heroes?"
     };
 
-    private Random _random = new Random();
-
     public ListingActivity()
         : base(
-            "Listing",
+            "Listing Activity",
             "This activity will help you reflect on the good things in your life.")
     {
     }
@@ -25,25 +19,28 @@ public class ListingActivity : Activity
     {
         DisplayStartingMessage();
 
-        string prompt = _prompts[_random.Next(_prompts.Count)];
+        Random random = new Random();
 
-        Console.WriteLine("\nList as many responses as you can to:");
-        Console.WriteLine($"\n--- {prompt} ---");
+        Console.WriteLine("\nList as many responses as you can:");
+
+        Console.WriteLine(
+            $"\n--- {_prompts[random.Next(_prompts.Count)]} ---");
 
         Console.Write("\nYou may begin in: ");
         ShowCountdown(5);
 
-        List<string> items = new List<string>();
+        int count = 0;
 
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
 
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
-            items.Add(Console.ReadLine());
+            Console.ReadLine();
+            count++;
         }
 
-        Console.WriteLine($"\nYou listed {items.Count} items!");
+        Console.WriteLine($"\nYou listed {count} items!");
 
         DisplayEndingMessage();
     }
