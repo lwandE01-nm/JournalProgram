@@ -1,10 +1,8 @@
-using System;
-
 public class BreathingActivity : Activity
 {
     public BreathingActivity()
         : base(
-            "Breathing",
+            "Breathing Activity",
             "This activity will help you relax by walking you through breathing in and out slowly.")
     {
     }
@@ -17,11 +15,13 @@ public class BreathingActivity : Activity
 
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine("\nBreathe in...");
+            Console.Write("\nBreathe in... ");
             ShowCountdown(4);
 
-            Console.WriteLine("\nBreathe out...");
+            Console.Write("\nBreathe out... ");
             ShowCountdown(4);
+
+            Console.WriteLine();
         }
 
         DisplayEndingMessage();
