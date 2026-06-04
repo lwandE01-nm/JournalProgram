@@ -1,24 +1,22 @@
-using System;
-
 class Program
 {
     static void Main(string[] args)
     {
-        bool running = true;
+        string choice = "";
 
-        while (running)
+        while (choice != "4")
         {
             Console.Clear();
 
-            Console.WriteLine("Menu Options:");
+            Console.WriteLine("Mindfulness Program");
+            Console.WriteLine();
             Console.WriteLine("1. Start Breathing Activity");
             Console.WriteLine("2. Start Reflection Activity");
             Console.WriteLine("3. Start Listing Activity");
-            Console.WriteLine("4. Start Gratitude Activity");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("4. Quit");
+            Console.Write("\nSelect a choice: ");
 
-            Console.Write("\nSelect a choice from the menu: ");
-            string choice = Console.ReadLine();
+            choice = Console.ReadLine();
 
             switch (choice)
             {
@@ -35,13 +33,11 @@ class Program
                     break;
 
                 case "4":
-                    new GratitudeActivity().Run();
-                    break;
-
-                case "5":
-                    running = false;
                     break;
             }
+
+            Console.WriteLine("\nPress Enter to continue...");
+            Console.ReadLine();
         }
     }
 }
