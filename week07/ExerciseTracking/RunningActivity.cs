@@ -25,3 +25,4 @@ public class RunningActivity : Activity
         return GetMinutes() / _distance;
     }
 }
+
