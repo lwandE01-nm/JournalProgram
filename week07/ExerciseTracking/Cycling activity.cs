@@ -25,3 +25,4 @@ public class CyclingActivity : Activity
         return 60 / _speed;
     }
 }
+
