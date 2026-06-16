@@ -30,3 +30,4 @@ public abstract class Activity
         return $"{_date:dd MMM yyyy} {GetType().Name.Replace("Activity", "")} ({_minutes} min): Distance {GetDistance():F1} km, Speed {GetSpeed():F1} kph, Pace {GetPace():F2} min per km";
     }
 }
+
