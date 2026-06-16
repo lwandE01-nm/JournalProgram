@@ -25,3 +25,4 @@ public class SwimmingActivity : Activity
         return GetMinutes() / GetDistance();
     }
 }
+
